@@ -1,0 +1,218 @@
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-negative-margins: true;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+$fa-font-path: "../vendor/fontawesome/webfonts";
+@import "../vendor/fontawesome/scss/fontawesome.scss";
+@import "../vendor/fontawesome/scss/solid.scss";
+
+$body-color: $gray-200;
+$link-decoration: none;
+
+$input-btn-padding-y-xs: $input-btn-padding-y-sm * (1/1.5) !default;
+$input-btn-padding-x-xs: $input-btn-padding-y-sm * (1/1.5) !default;
+$btn-padding-y-xs: $input-btn-padding-y-xs !default;
+$btn-padding-x-xs: $input-btn-padding-x-xs !default;
+$btn-font-size-xs: $font-size-base * 0.8125 !default;
+$btn-border-radius-xs: 0.225 !default;
+$input-padding-y-xs: $input-btn-padding-y-xs;
+$input-padding-x-xs: $input-btn-padding-x-xs;
+$input-font-size-xs: $btn-font-size-xs;
+$input-border-radius-xs: $btn-border-radius-xs;
+
+$orange-transparent: #fd7d1440;
+.input-group-xs > .node-input,
+.input-group-xs > .btn,
+.input-group-xs > .btn-group > .btn {
+  padding: $input-padding-y-xs $input-padding-x-xs;
+  @include font-size($input-font-size-xs);
+  @include border-radius($input-border-radius-xs);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+}
+
+a {
+  color: $gray-700;
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $orange;
+  background: transparent;
+}
+
+span {
+  display: inline-f;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#clock {
+  cursor: default;
+}
+
+.P {
+  width: 100%;
+}
+
+.app-wrapper {
+  @extend .d-flex;
+  @extend .align-items-stretch;
+  height: 100vh;
+}
+
+.sidebar-container {
+  min-width: 64px;
+  max-width: 64px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  @include media-breakpoint-down(md) {
+    margin-left: -64px;
+  }
+  .sidebar-link {
+    @extend .rounded;
+    @extend .rounded-3;
+    font-size: $h3-font-size;
+    padding: $spacer;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 64px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: $zindex-sticky;
+    top: 0;
+    background-color: $gray-400;
+  }
+  &__body {
+    display: inline-flex;
+    min-height: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+.menu-canvas {
+  display: inline-flex;
+  padding: $spacer;
+  width: 100%;
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  padding: 0 $spacer;
+  overflow-y: auto;
+  min-height: 0;
+  .__header {
+    background: $gray-200;
+    font-weight: $font-weight-bold;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-left: map-get($map: $spacers, $key: 1);
+    padding: 0 $spacer $spacer $spacer;
+    min-height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: $zindex-sticky;
+  }
+  .__body {
+    padding-left: $spacer;
+    margin-bottom: 10px;
+    list-style: none;
+    font-weight: $font-weight-light;
+  }
+}
+
+.table-view {
+  width: 100%;
+  @extend .view;
+}
+
+.side-view {
+  width: 256px;
+  @extend .view;
+}
+
+.tree {
+  margin-bottom: 10px;
+  list-style: none;
+  margin-top: map-get($map: $spacers, $key: 4);
+  margin-right: $spacer;
+}
+
+.branch {
+  margin-bottom: map-get($map: $spacers, $key: 5);
+}
+
+.leaf {
+  padding-left: map-get($map: $spacers, $key: 5);
+}
+
+.node {
+  display: flex;
+  margin-top: $spacer;
+}
+
+.node:not(:only-child) {
+  &:not(:first-child) {
+    @extend .input-group-sm;
+    padding-left: map-get($map: $spacers, $key: 5);
+  }
+}
+
+.node > .branch {
+  padding-left: map-get($map: $spacers, $key: 5) * 2;
+}
+
+.node-header {
+  display: flex;
+  margin-top: $spacer;
+}
+
+.node-header:not(:only-child) {
+  &:not(:first-child) {
+    @extend .input-group-xs;
+    padding-left: map-get($map: $spacers, $key: 4);
+  }
+}
+
+.node > .branch {
+  padding-left: map-get($map: $spacers, $key: 5) * 2;
+}
+
+.node-input[type="text"] {
+  min-width: 0;
+  flex-grow: 1;
+  padding: 0 $spacer;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: $gray-300;
+}
+
+.price-button {
+  @extend .btn;
+  @extend .btn-sm;
+  background-color: $gray-200;
+}
