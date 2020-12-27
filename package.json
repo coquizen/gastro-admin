@@ -1,22 +1,30 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gastro-admin",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "An administration dashboard for restaurant owners to manage their front-end website.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ian Canino <ian@thecommittedbug.io>",
   "dependencies": {
+    "bootstrap": "^5.0.0-beta1",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",
+    "gatsby-plugin-layout": "^1.7.0",
     "gatsby-plugin-manifest": "^2.6.1",
     "gatsby-plugin-offline": "^3.4.0",
     "gatsby-plugin-react-helmet": "^3.4.0",
+    "gatsby-plugin-sass": "^2.8.0",
     "gatsby-plugin-sharp": "^2.8.0",
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-transformer-sharp": "^2.6.0",
+    "moment-timezone": "^0.5.32",
+    "node-sass": "4.12.0",
+    "postcss": "^8.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-live-clock": "^5.0.13",
+    "react-moment": "^1.1.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"
@@ -36,9 +44,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/CaninoDev/gastro-admin"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/CaninoDev/gastro-admin/issues"
   }
 }
